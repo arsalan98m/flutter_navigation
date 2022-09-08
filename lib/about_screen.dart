@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_navigation/contact_screen.dart';
 
 class AboutScreen extends StatelessWidget {
-  final String name;
-  final int num;
+  static const String routeName = "/about_screen";
 
   const AboutScreen({
     Key? key,
-    required this.name,
-    this.num = 2,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final arguments = ModalRoute.of(context)?.settings.arguments as Map;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("$name $num"),
+        title: Text("${arguments['title']} ${arguments['name']}"),
       ),
       body: SafeArea(
         child: Padding(
