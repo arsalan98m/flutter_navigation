@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_navigation/about_screen.dart';
 import 'package:flutter_navigation/contact_screen.dart';
 import 'package:flutter_navigation/home_screen.dart';
+import 'package:flutter_navigation/utils/routes.dart';
+import 'package:flutter_navigation/utils/routes_name.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,16 +16,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Named Routes',
+      title: 'Advanced Named Routes with onGenerateRoute',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routes: {
-        HomeScreen.routeName: (context) => const HomeScreen(),
-        AboutScreen.routeName: (context) => const AboutScreen(),
-        ContactScreen.routeName: (context) => const ContactScreen(),
-      },
-      initialRoute: HomeScreen.routeName,
+      onGenerateRoute: Routes.generateRoute,
+      initialRoute: RouteName.homeScreen,
     );
   }
 }

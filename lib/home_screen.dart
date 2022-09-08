@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navigation/about_screen.dart';
+import 'package:flutter_navigation/utils/routes_name.dart';
 
-// Named Routes
+// Advanced named routes
 class HomeScreen extends StatelessWidget {
-  static const String routeName = "/home_screen";
-
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -21,14 +20,11 @@ class HomeScreen extends StatelessWidget {
             children: <Widget>[
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(
-                    context,
-                    AboutScreen.routeName,
-                    arguments: {
-                      'name': 'arsalan',
-                      'title': 'About screen',
-                    },
-                  );
+                  Navigator.pushNamed(context, RouteName.aboutScreen,
+                      arguments: {
+                        "name": "advanced Routing",
+                        "title": "about screen",
+                      });
                 },
                 child: Container(
                   height: 50,

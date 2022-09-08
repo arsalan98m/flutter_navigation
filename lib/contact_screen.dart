@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ContactScreen extends StatelessWidget {
-  static const String routeName = "/contact_screen";
-
   const ContactScreen({Key? key}) : super(key: key);
 
   @override
